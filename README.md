@@ -1,12 +1,12 @@
-# Awesome-Notion
+# Notion Picks｜Notion 精选
 
 **简体中文** | [English](README.en.md)
 
-收集 Notion 工具、Skills、模板与内容发布方案的双语目录，附项目来源和使用前提。
+挑选值得了解的 Notion 工具、Skills 和模板，写清用途、安装条件和容易忽略的限制。希望你找到适合自己的几个工具，而不用挨个翻遍资源列表。
 
 [Skills 详细指南](docs/notion-skills.md) · [资源核验记录](docs/resource-checks.md) · [贡献指南](CONTRIBUTING.md)
 
-条目介绍上游声明的用途；来源核验与待验证服务见[核验记录](docs/resource-checks.md)。
+工具介绍参考各项目文档。哪些查过资料、哪些尚未试用，记在[核验记录](docs/resource-checks.md)里。
 
 ## 从这里开始
 
@@ -64,7 +64,7 @@
 
 ## Notion 小组件
 
-将组件服务生成的链接通过 Notion 的嵌入功能加入页面。账号要求、可嵌入内容及免费或付费范围以各服务说明为准。
+把组件服务生成的链接嵌入 Notion 页面即可使用。部分组件需要注册或付费。
 
 | 资源 | 用途 | 来源 |
 | :---- | :---- | :---- |
@@ -77,7 +77,7 @@
 
 ## Notion 应用场景：博客、知识库与网站
 
-“Notion as …” 表示用 Notion 编辑和管理内容，再由外部工具发布为博客、知识库或网站。下表按使用目标选择工具。
+“Notion as …” 就是在 Notion 里写内容，再通过外部工具发布成博客、知识库或网站。选哪个，取决于你想做什么，以及是否愿意自己部署。
 
 ### 按场景选择
 
@@ -95,7 +95,7 @@
 | [Next.js Notion Starter Kit](https://github.com/transitive-bullshit/nextjs-notion-starter-kit) | 基于 Next.js 和 React Notion X 的网站、博客开发模板。 | 当前 README 要求 Node.js >= 22，配置公开的根 Notion 页面，并自行部署。 |
 | [NoteHost](https://github.com/velsa/notehost) | 用 Cloudflare Workers 代理 Notion 站点，配置自定义域名、页面路径及样式。 | 需要自己的域名、Cloudflare 账号和部署配置；它是代理方案，不是独立内容管理系统。 |
 
-这些工具主要解决内容展示和发布，不能据此推断它们提供完整的会员、支付、订单或业务数据库能力。公开站点只应包含计划对外发布的内容；API 集成授权与将页面发布到互联网是不同操作。需要嵌入自有 React 应用时，见下方[页面渲染工具](#notion-renderers)。
+这些工具负责展示和发布内容。会员、支付、订单等功能需要另外确认；建公开站点时，也要留意页面的发布范围。API 授权不会自动把页面公开。想在自己的 React 应用里显示 Notion 页面，可以看[页面渲染工具](#notion-renderers)。
 
 <a id="notion-api"></a>
 
@@ -122,7 +122,7 @@
 
 ## Notion 技能（Skills）
 
-收集用于 Notion 的 AI Agent Skills，按来源及连接方式分类。完整条目、安装方法和使用前提见 [Notion Skills 收集](docs/notion-skills.md)。
+想让 AI 帮你整理 Notion、准备会议或保存链接，可以从下面几类 Skills 入手。安装方法见 [Notion Skills 收集](docs/notion-skills.md)。
 
 - [OpenAI Notion 插件及四个 Skills](docs/notion-skills.md#openai-notion-插件)：知识整理、会议准备、研究文档和需求实施规划；原 `openai/skills` 仓库已弃用，已更新到当前插件路径。
 - [社区 Skills](docs/notion-skills.md#社区-skills非官方)：Notion 自动化、模板经营指导，以及基于 Clipno CLI 的网页剪藏。
@@ -136,7 +136,7 @@
 | :---- | :---- | :---- |
 | [Clipno](https://github.com/EwingYangs/clipno-cli) · [官网](https://clipno.app) | 将链接剪藏到 Notion；将网页提取为结构化 JSON 或 Markdown，按选项进行转录、OCR 和摘要。 | Node.js >= 18；登录 Clipno。保存到 Notion 还需在 Clipno 中关联 Notion 工作区。[安装与说明](docs/notion-skills.md#clipno-cli-配套-skill) |
 
-Clipno 是附带 Agent Skill 的命令行工具，使用 Clipno 服务，不依赖 Notion MCP。以上为项目声明能力，尚未安装实测。
+Clipno 通过自己的服务保存和解析链接，也附带一个教 Agent 调用 CLI 的 Skill，无需 Notion MCP。这里按项目文档介绍，尚未实际试用。
 
 <a id="notion-sync-export"></a>
 
@@ -167,19 +167,19 @@ Clipno 是附带 Agent Skill 的命令行工具，使用 Clipno 服务，不依�
 | [Notion Everything](https://www.notioneverything.com/) | 查找第三方 Notion 模板及相关资源。 | 第三方目录；以创作者的价格、授权及交付说明为准。 |
 | [Indie Hacker Toolkit](https://github.com/Wittlesus/indie-hacker-toolkit) | 面向独立开发者的发布清单、收入追踪、内容日历等模板包。 | 付费模板包，以 Markdown 导入；价格、交付和再分发许可见原项目。 |
 
-选择模板时，优先核对预览、数据库结构、所需功能及是否适合自己的工作流程。模板经营相关的 Agent Skill 见 [社区 Skills](docs/notion-skills.md#社区-skills非官方)。
+选模板时先看预览和数据库结构，再想想它是否适合自己的记录习惯。想设计和销售模板，可以看看 [社区 Skills](docs/notion-skills.md#社区-skills非官方) 中的相关指南。
 
 ## 收录与核验说明
 
-优先收录官方入口、可追溯的开源项目和用途明确的第三方资源；区分官方 SDK、社区工具、服务目录和历史项目。
+这里更看重工具能解决什么问题、适合谁，以及上手需要哪些条件。官方工具和社区项目都会收录，付费产品会注明。
 
-感谢 [spencerpauly/awesome-notion](https://github.com/spencerpauly/awesome-notion) 提供分类与资源线索。条目按原项目说明重新核对，具体取舍见核验记录。
+部分资源线索来自 [spencerpauly/awesome-notion](https://github.com/spencerpauly/awesome-notion)，感谢原作者的整理。
 
-本轮核验日期：2026-11-09。已读取所列开源项目的上游 README，未安装或测试其功能。部分官网及文档站受当前环境网络策略限制，未验证在线可用性；不代表这些网站已失效。逐项来源与核验范围见 [资源核验记录](docs/resource-checks.md)。
+最近查阅资料的日期是 2026-11-09。已阅读所列开源项目的 README，还没有逐个安装测试；部分官网因网络限制未能打开。详情见[资源核验记录](docs/resource-checks.md)。
 
 ## 参与贡献
 
-欢迎补充资源、修正说明或反馈失效链接。请阅读[贡献指南](CONTRIBUTING.md)，并同步维护中英文版本。
+有用过的好工具，或发现描述、链接有问题，欢迎补充和修正。[贡献指南](CONTRIBUTING.md)说明了条目格式和双语维护方式。
 
 ## 许可证
 

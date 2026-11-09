@@ -4,7 +4,7 @@
 
 Review date: 2026-11-09. [Back to the resource directory](../README.en.md)
 
-“Upstream documentation reviewed” means the original README was retrieved and its described purpose and links checked. It does not establish successful installation, login, functional testing, or active maintenance. “External site unverified” means the environment's proxy returned 403 before a response from the destination website was obtained; it does not establish that the site is offline.
+This record tracks sources read and questions still open. “Upstream documentation reviewed” means the original README, purpose, and links were checked; installation, login, testing, and maintenance status were not assessed. “External site unverified” means the environment’s proxy blocked the request with a 403 before the website responded, leaving its availability unknown.
 
 ## Open-source Project Sources
 
@@ -19,7 +19,7 @@ Review date: 2026-11-09. [Back to the resource directory](../README.en.md)
 
 ## Websites, Documentation, and Service Directories
 
-The environment's network policy prevented access to these external sites during this review. Availability, login, paid features, and embedding have not been tested. Descriptions serve as directory summaries, not guarantees of functionality or plan features.
+Network restrictions prevented access to the sites below. Login, paid features, and embedding remain untested, so check the current service before relying on its directory description.
 
 | Entry | Source URL | Verification status |
 | :---- | :---- | :---- |
@@ -40,7 +40,7 @@ For skill and Clipno sources, prerequisites, and verification scope, see the [No
 
 ## Additions Inspired by spencerpauly/awesome-notion
 
-The [reference directory](https://github.com/spencerpauly/awesome-notion/blob/master/README.md) was read to identify candidates, followed by each original project's documentation. This update adds the following eight distinct resources and moves the existing React Notion X entry into the rendering tools category. Both language versions were updated. Checks cover sources and described purposes only; nothing was installed, deployed, or executed, so current runtime compatibility is not guaranteed.
+The eight entries below came from leads in the [reference directory](https://github.com/spencerpauly/awesome-notion/blob/master/README.md), followed by a read of each original project’s documentation. Both language versions include them, with React Notion X listed under page rendering tools. These projects have not been installed, deployed, or run; compatibility still needs testing.
 
 | New resource | Original documentation reviewed | Selection rationale and limits |
 | :---- | :---- | :---- |

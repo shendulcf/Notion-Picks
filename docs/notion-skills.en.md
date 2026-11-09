@@ -2,7 +2,7 @@
 
 [简体中文](notion-skills.md) | **English**
 
-Workflows for AI agents using Notion. A skill typically consists of `SKILL.md` and supporting resources; a CLI executes commands; MCP is a protocol for connecting external services. A project can provide both a CLI and a skill. Installing a skill does not mean its tools are installed or accounts authorized.
+A skill is a set of instructions for an AI agent, usually stored in `SKILL.md` and supporting files. It can teach an agent to run a command-line tool (CLI) or connect to a service through MCP. After installing a skill, you still need the tools and accounts it uses.
 
 [Back to README](../README.en.md#notion-skills)
 
@@ -13,7 +13,7 @@ Workflows for AI agents using Notion. A skill typically consists of `SKILL.md` a
 
 ## OpenAI Notion Plugin
 
-Source: [Notion plugin in openai/plugins](https://github.com/openai/plugins/tree/main/plugins/notion). The plugin includes the following four skills. The project describes them as using a connected Notion integration; connect and authorize Notion in a client that supports the plugin.
+The [Notion plugin in openai/plugins](https://github.com/openai/plugins/tree/main/plugins/notion) includes these four skills. Connect and authorize Notion in a client that supports the plugin before using them.
 
 | Skill | Use case | Purpose |
 | :---- | :---- | :---- |
@@ -22,11 +22,11 @@ Source: [Notion plugin in openai/plugins](https://github.com/openai/plugins/tree
 | [notion-research-documentation](https://github.com/openai/plugins/tree/main/plugins/notion/skills/notion-research-documentation) | Research and documentation | Synthesize multiple Notion sources into cited briefs, comparisons, or research reports. |
 | [notion-spec-to-implementation](https://github.com/openai/plugins/tree/main/plugins/notion/skills/notion-spec-to-implementation) | Implementation planning | Turn PRDs or feature specifications in Notion into implementation plans, tasks, and progress updates. |
 
-The previously listed [openai/skills](https://github.com/openai/skills) repository is marked deprecated in its README and points to `openai/plugins`. The table now links to the current plugin directories. Old directories remain historical references rather than preferred installation entry points. Follow the [plugin repository instructions](https://github.com/openai/plugins#readme) and your client's documentation for installation and activation, rather than copying older MCP configuration commands.
+[openai/skills](https://github.com/openai/skills) is deprecated; its replacement is `openai/plugins`. The links above point to the new directories. The old ones remain useful for reference, but follow the [plugin repository instructions](https://github.com/openai/plugins#readme) and your client’s documentation when installing. Older MCP configuration commands may no longer apply.
 
 ## Community Skills (Unofficial)
 
-These resources are maintained by third parties and are not official Notion or OpenAI skills. Client compatibility and dependencies reflect the projects' documentation and have not been individually tested.
+These skills are maintained by third parties. Client and dependency details come from their project documentation and have not been tested individually.
 
 ### [notion-automation](https://github.com/sickn33/antigravity-awesome-skills/tree/main/skills/notion-automation)
 
@@ -49,7 +49,7 @@ Guide an agent to use the Clipno CLI to save links to Notion or extract web cont
 - Source: EwingYangs/clipno-cli
 - Clients and dependencies: The project explicitly documents Claude Code skill usage; other clients depend on their skill support. Requires Node.js >= 18, the Clipno CLI or npx, and Clipno login. Saving also requires a linked Notion workspace.
 
-For the first two entries, see the [community repository instructions](https://github.com/sickn33/antigravity-awesome-skills#readme). `notion-automation` uses third-party Rube MCP, a different connection method from the OpenAI plugin. `notion-template-business` provides business guidance rather than Notion data operations.
+See the [community repository instructions](https://github.com/sickn33/antigravity-awesome-skills#readme) to install the first two skills. `notion-automation` needs Rube MCP. `notion-template-business` gives design and sales advice; it does not read or write Notion data.
 
 ## Clipno CLI Companion Skill
 
@@ -59,13 +59,13 @@ For the first two entries, see the [community repository instructions](https://g
 
 ### Install the Skill
 
-Run the following in an environment supported by your client and select the installation target when prompted:
+Run this in an environment supported by your client, then choose the installation target when prompted:
 
 ```bash
 npx skills add EwingYangs/clipno-cli
 ```
 
-This adds a workflow for the agent. It does not globally install the `clipno` CLI or automatically authorize accounts. The project also documents Claude Code plugin marketplace and manual installation methods in its README.
+This step installs the skill only. Set up the `clipno` CLI and account authorization separately. The project README also covers the Claude Code plugin marketplace and manual installation.
 
 ### Use the CLI
 
@@ -89,13 +89,13 @@ clipno extract https://example.com --markdown
 
 You can use `npx clipno` instead of the globally installed `clipno` command. The original skill uses `npx -y clipno@latest` when the CLI is not installed.
 
-`extract` does not require a linked Notion workspace, but still runs through the Clipno service; complete Clipno login as described by the project. `save` supports tags, notes, titles, transcription, OCR, and AI summaries. Some enrichment is added asynchronously and depends on account settings and quotas. Check the website for current plans and limits.
+`extract` needs Clipno login but no linked Notion workspace. `save` also supports tags, notes, titles, transcription, OCR, and AI summaries. Enrichment may appear on the page later and depends on account settings and quotas. Check the website for current limits.
 
 ## Usage and Submission Guidelines
 
 - Choose resources according to their dependencies: the OpenAI plugin uses its Notion integration; the community automation skill uses Rube MCP; Clipno uses its CLI and service; the template business skill provides strategic guidance.
 - Verify tool availability and permission scope after installation. Installing a skill, connecting a service, and granting page or database access are separate steps.
 - New entries should include original project and `SKILL.md` links, maintainer, purpose, supported clients, runtime and service dependencies, installation, and authorization instructions. For entries hosted in third-party collections, identify both the collection and its declared upstream source.
-- Verification scope: upstream documentation, skill file availability, and described purposes have been checked. These skills and CLIs have not been installed or executed; account authorization, extraction quality, and Notion writes have not been tested.
+- These descriptions come from project documentation and accessible skill files. The tools have not been installed or run, and authorization, extraction quality, and Notion writes remain untested.
 
-Review date: 2026-11-09. Upstream directories, installation methods, and service plans may change; refer to the original projects for current instructions.
+Sources reviewed on 2026-11-09. Installation instructions, directories, and plans can change; check the original project before setting up a tool.

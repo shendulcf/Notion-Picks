@@ -2,7 +2,7 @@
 
 **简体中文** | [English](notion-skills.en.md)
 
-收集可供 AI Agent 使用的 Notion 工作流程。Skill 通常由 `SKILL.md` 和配套资源组成；CLI 是执行命令的工具；MCP 是连接外部服务的协议。一个项目可以同时提供 CLI 和 Skill，安装 Skill 不代表已经安装工具或完成账号授权。
+Skill 是写给 AI Agent 的操作指南，通常放在 `SKILL.md` 及配套文件里。它可以教 Agent 调用命令行工具（CLI），也可以通过 MCP 连接服务。装好 Skill 后，还需要准备它用到的工具和账号。
 
 [返回 README](../README.md#notion-skills)
 
@@ -13,7 +13,7 @@
 
 ## OpenAI Notion 插件
 
-来源：[openai/plugins 的 Notion 插件](https://github.com/openai/plugins/tree/main/plugins/notion)。插件包含以下四个 Skills，项目说明其通过已连接的 Notion 集成提供能力；使用时需在支持该插件的客户端完成 Notion 连接与授权。
+[openai/plugins 的 Notion 插件](https://github.com/openai/plugins/tree/main/plugins/notion)包含下面四个 Skills。使用前，需要在支持该插件的客户端中连接并授权 Notion。
 
 | Skill | 适用场景 | 主要用途 |
 | :---- | :---- | :---- |
@@ -22,11 +22,11 @@
 | [notion-research-documentation](https://github.com/openai/plugins/tree/main/plugins/notion/skills/notion-research-documentation) | 研究与文档 | 检索多个 Notion 来源，汇总为带有引用的简报、对比分析或研究报告。 |
 | [notion-spec-to-implementation](https://github.com/openai/plugins/tree/main/plugins/notion/skills/notion-spec-to-implementation) | 需求落地 | 将 Notion 中的 PRD 或功能规格拆解为实施计划、任务和进度记录。 |
 
-原先收录的 [openai/skills](https://github.com/openai/skills) 已在 README 标记弃用，并指向 `openai/plugins`。上表已更新为当前插件中的目录；旧目录仍可作为历史参考，不再作为首选安装入口。安装与启用以[插件项目说明](https://github.com/openai/plugins#readme)及客户端文档为准，不应直接套用旧版 MCP 配置命令。
+[openai/skills](https://github.com/openai/skills) 已标记弃用，新入口是 `openai/plugins`。上面的链接指向新目录；旧目录可供参考。安装时跟随[插件项目说明](https://github.com/openai/plugins#readme)和客户端文档，旧版 MCP 配置命令可能已经不适用。
 
 ## 社区 Skills（非官方）
 
-以下资源由第三方维护，不属于 Notion 或 OpenAI 官方发布的 Skills。客户端兼容性与依赖按各项目说明列出，未逐一实测。
+下面是第三方维护的 Skills。客户端和依赖信息来自各自的项目文档，尚未逐一试用。
 
 ### [notion-automation](https://github.com/sickn33/antigravity-awesome-skills/tree/main/skills/notion-automation)
 
@@ -49,7 +49,7 @@ Notion 模板的设计、定价、销售渠道和营销规划。
 - 来源：EwingYangs/clipno-cli
 - 客户端与依赖：项目明确提供 Claude Code Skill 用法；其他客户端按其 Skills 支持情况选择。需要 Node.js >= 18、Clipno CLI 或 npx，以及 Clipno 登录；保存还需关联 Notion。
 
-前两个条目的安装方法见[社区项目说明](https://github.com/sickn33/antigravity-awesome-skills#readme)。`notion-automation` 使用第三方 Rube MCP，与 OpenAI 插件的集成方式不同。`notion-template-business` 是经营策略类 Skill，不是 Notion 数据操作工具。
+前两个 Skill 的安装方法见[社区项目说明](https://github.com/sickn33/antigravity-awesome-skills#readme)。`notion-automation` 需要 Rube MCP；`notion-template-business` 提供设计和销售建议，不负责读写 Notion 数据。
 
 ## Clipno CLI 配套 Skill
 
@@ -59,13 +59,13 @@ Notion 模板的设计、定价、销售渠道和营销规划。
 
 ### 安装 Skill
 
-在所用客户端支持的环境中运行以下命令，并按提示选择安装目标：
+在支持 Skills 的客户端环境中运行，按提示选择安装位置：
 
 ```bash
 npx skills add EwingYangs/clipno-cli
 ```
 
-该命令添加的是供 Agent 使用的工作流程，不等同于全局安装 `clipno` CLI，也不会自动完成账号授权。项目还提供 Claude Code 插件市场和手动复制安装方式，见其 README。
+这一步只安装 Skill。`clipno` CLI 和账号授权仍需单独准备。项目 README 也列出了 Claude Code 插件市场和手动复制的安装方法。
 
 ### 使用 CLI
 
@@ -89,13 +89,13 @@ clipno extract https://example.com --markdown
 
 也可以使用 `npx clipno` 代替全局安装后的 `clipno` 命令。Skill 原文使用 `npx -y clipno@latest` 作为 CLI 未安装时的替代方式。
 
-`extract` 不要求关联 Notion，但仍通过 Clipno 服务执行，应按项目说明完成 Clipno 登录。`save` 支持标签、备注、标题，以及转录、OCR 和 AI 摘要等选项；部分增强结果异步写入，并受账号设置和配额限制。套餐与额度以官网当前说明为准。
+`extract` 只需要 Clipno 登录，不用关联 Notion 工作区。`save` 还支持标签、备注、标题、转录、OCR 和 AI 摘要。增强内容有时会稍后出现在页面上，并受账号设置和配额影响；具体额度请看官网。
 
 ## 使用与收录说明
 
-- 根据实际依赖选择资源：OpenAI 插件使用其 Notion 集成，社区自动化 Skill 使用 Rube MCP，Clipno 使用 CLI 与 Clipno 服务，模板经营 Skill 主要提供策略指导。
+- 准备连接时先看对应项目：OpenAI 插件使用 Notion 集成，社区自动化 Skill 用 Rube MCP，Clipno 用自己的 CLI 和服务；模板经营 Skill 则提供设计与销售建议。
 - 安装后核对工具可用性和授权范围；安装 Skill、连接服务、授予页面或数据库访问权限是不同步骤。
 - 新条目应提供项目及 `SKILL.md` 原始链接、维护者、用途、适用客户端、运行时与服务依赖，以及安装和授权说明。第三方收集仓库中的条目应注明所在仓库和其声明的上游来源。
-- 核验分层记录：本页已核实上游说明、Skill 文件可访问性及其声明用途；尚未安装或执行这些 Skills、CLI，也未验证账号授权、网页提取质量或 Notion 写入行为。
+- 这些介绍来自项目说明和可读取的 Skill 文件。尚未安装或运行工具，授权、提取效果和 Notion 写入也还没测试。
 
-核实日期：2026-11-09。上游目录、安装方式和服务套餐可能更新，请以原项目说明为准。
+资料查阅于 2026-11-09。安装方法、目录和套餐可能变化，使用时请再看一眼原项目的说明。

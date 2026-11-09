@@ -4,15 +4,15 @@
 
 [Back to the directory](README.en.md)
 
-Contributions can add useful resources, update project status, improve translations, or report broken links.
+Share tools you have found useful, correct an entry, improve a translation, or report a broken link.
 
 ## Adding a Resource
 
-1. Search existing entries and choose the category matching the primary use case. Cross-link other categories instead of duplicating descriptions.
+1. Check whether the resource is already listed, then choose a category for its main use. Link to that entry from other categories when needed.
 2. Prefer the original website or repository and remove referral and tracking parameters.
-3. Describe the purpose in one sentence, then include requirements that affect selection: clients, runtimes, authorization, deployment, or commercial terms.
-4. Distinguish official projects, community tools, paid services, and historical resources. A public repository does not mean the product is free.
-5. Record the review date, source evidence, and scope. Reading a README, reaching a website, and testing functionality are different results. A proxy denial does not establish that a website is offline.
+3. Say what the tool does and what the reader needs to use it: a client, runtime, account, or deployment. Mention any payment requirement.
+4. Identify official or community sources and label historical projects. If a product is paid despite having a public repository, say so.
+5. Include the date and sources you checked, and say whether you tried the tool. If a page will not open, check whether the problem is the site or your network.
 
 Suggested entry format:
 
@@ -38,6 +38,6 @@ Update links, dependencies, and verification status in both languages when chang
 - Run `python3 scripts/check_docs.py` to check local links, table structure, language switches, resource parity, and shell examples; then run `git diff --check`.
 - Claim only checks that were completed; a reachable link does not establish that a tool works.
 
-Keep detailed verification notes in the verification record and decision-relevant information in the directory. Label discontinued or unavailable resources and move them to historical listings when appropriate.
+Keep purposes and requirements on the homepage and source details in the verification record. Label discontinued or unavailable resources, moving them to historical listings when needed.
 
 The checker uses only the Python 3 standard library and works offline. GitHub Actions runs it when documentation changes are pushed or proposed in a pull request. It does not check external website availability or execute listed tools. `.editorconfig` standardizes encoding, indentation, and line endings.
